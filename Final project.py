@@ -35,6 +35,11 @@ def mod_pert_random(low, likely, high, confidence=4, samples=1):
 
 
 def initial_stock():
+    '''
+    Generates inventory dataframe, storage capacity for each item and initializes expiry days for all items
+
+    :return: Inventory Dataframe, Expiry dictionary and storage
+    '''
     expiry_days = {'A': 3, 'B': 5}
     storage = 100
     df_stock = pd.DataFrame({'A': [expiry_days['A']] * storage, 'B': [expiry_days['B']] * storage})
@@ -42,6 +47,12 @@ def initial_stock():
 
 
 def demand_items(storage):
+    '''
+    Generates daily demand using PERT for each item and stores it in a list corresponding to each item key in dictionary.
+
+    :param storage: maximum storage capacity for each item
+    :return: a dictionary of lists of daily demand for each item
+    '''
     days_to_run = 28
     stock_demand = {'A': mod_pert_random(0.15 * storage, 0.18 * storage, 0.20 * storage, samples=days_to_run),
                     'B': mod_pert_random(0.10 * storage, 0.12 * storage, 0.15 * storage, samples=days_to_run)}
@@ -49,12 +60,24 @@ def demand_items(storage):
 
 
 def defective(items):
+    '''
+    Generates a random integer which represents the number of defective items form the total restocked items.
+
+    :param items: total number of items to be restocked, out of which we check the defective items
+    :return: an integer number of defective items
+    '''
     percent_of_defective = np.random.choice(list(range(5, 11)))
     defective_items = (items * percent_of_defective) // 100
     return defective_items
 
 
 def item_df(df):
+    '''
+    Makes a list of dataframes for each item
+
+    :param df: Whole dataframe with each column as each item and number of rows represent the number of itemsw in stock
+    :return: list of dataframes for each item
+    '''
     l1 = list(df.columns)
     df_list = []
     for i in l1:
@@ -63,6 +86,14 @@ def item_df(df):
 
 
 def loss(missed, weekly_wastage, key):
+    '''
+    Calculates total loss and total missed profit for each item
+
+    :param missed: Number of missed orders due to no stock
+    :param weekly_wastage: Number of waste items because they were defctive or expired
+    :param key: Name of item (A or B)
+    :return: List of loss and missed profit
+    '''
     cost_a = 15
     cost_b = 10
     profit_a = 5
@@ -79,6 +110,15 @@ def loss(missed, weekly_wastage, key):
 
 
 def restocking(scenario, storage, df, weekly_demand):
+    '''
+    Generates the total number of items to be restocked in the inventory on the basis of type of scenario
+
+    :param scenario: type of scenario (1 or 2)
+    :param storage: storage capacity for each item
+    :param df: Dataframe of item (current stock)
+    :param weekly_demand: Previous week's demand (integer)
+    :return: an integer number of the items to be restocked
+    '''
     if scenario == 1:
         items_to_restock = storage - df.shape[0]
         return items_to_restock
@@ -93,6 +133,16 @@ def restocking(scenario, storage, df, weekly_demand):
 
 
 def update_inventory(a, expiry, storage, scenario):
+    '''
+    Updates the inventory on the basis of demand.
+    Drops sold and expired items each day and at the end of each week, calls the restocking function to restock the inventory.
+
+    :param a: Dataframe of inventory with all items
+    :param expiry: Dictionary of expiry days for all items
+    :param storage: storage capacity for each item
+    :param scenario: type of scenario (1 or 2)
+    :return: list of Dictionaries for loss and missed profit. Each dictionary again contains a list for each item.
+    '''
     demand = demand_items(storage)
     df_list = item_df(a)
     wastage_dict = {'A': [], 'B': []}
@@ -151,6 +201,12 @@ def update_inventory(a, expiry, storage, scenario):
 
 
 def mc_simulation():
+    '''
+    Runs the program multiple times as specified by the user in number of simulations.
+    Also plots graphs to represent the aggregate statistics after all simulations.
+
+    :return: None
+    '''
     loss_simulation_dict = {1: {'A': [], 'B': []}, 2: {'A': [], 'B': []}}
     missed_opportunity_simulation_dict = {1: {'A': [], 'B': []}, 2: {'A': [], 'B': []}}
     simulations = int(input('Enter number of simulations\n'))
