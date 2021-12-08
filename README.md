@@ -14,11 +14,13 @@ We hypothesize that restocking on the basis of demand will optimize our cost and
 
 Flowchart:
 
-![](https://github.com/LalitaTakle/2021Fall_finals/blob/main/Flowchart.png?raw=true =250x250)
+![](https://github.com/LalitaTakle/2021Fall_finals/blob/main/Flowchart.png?raw=true)
 We first get the initial inventory for both the items which is stored as a data frame which mentions the product’s expiry as well. We then check the daily demand and accordingly drop the items that are sold. At the end of the day, we reduce 1 day from each item’s expiry. We check for expired items and if any, drop those items on a daily basis. These expired items are then added to the weekly wastage. After each day, we check if a week is completed.  At the end of each week, we check for any defective items and add them to the weekly wastage. The restocking logic is then initiated. 
 If simulating for Scenario 1, we restock up to the full capacity of the inventory by appending new rows which represents the items that are restocked. 
 In Scenario 2, instead of restocking to full capacity, we only restock the items based on the previous week’s demand till the time it expired. 
 We repeat the same process every week and, in the end, display the summary statistics for 1 month (i.e., 4 weeks)
+
+<img src="Flowchart.png" width="324" height="324">
 
 Assumptions:
 We have designed the model based on the following assumptions:
