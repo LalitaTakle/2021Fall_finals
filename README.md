@@ -50,7 +50,7 @@ The missed opportunity is calculated as the profit that could have been made for
 
 ## Results:
 
-<img src="Scenario 1.png" width="800" height="600">
+<img src="Scenario 1.png" width="1000" height="600">
 It can be seen that for this scenario, losses incurred for item B are lower than that for the item A. The reason behind this is that item B has a longer shelf life when compared to item A. Thus, there is less possibility of wastage due to expiry in case of B. The missed opportunities for item A are greater than that of item B because of the same reason that A would expire sooner. As a result, for the item A we miss orders for 4 days whereas for the item B we only miss orders for 2 days in a week.
 
 
