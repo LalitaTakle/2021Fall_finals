@@ -50,10 +50,17 @@ The missed opportunity is calculated as the profit that could have been made for
 
 ## Results:
 
-<img src="Scenario 1.png" width="700" height="600">
+<img src="Scenario 1.png" width="800" height="600">
+It can be seen that for this scenario, losses incurred for item B are lower than that for the item A. The reason behind this is that item B has a longer shelf life when compared to item A. Thus, there is less possibility of wastage due to expiry in case of B. The missed opportunities for item A are greater than that of item B because of the same reason that A would expire sooner. As a result, for the item A we miss orders for 4 days whereas for the item B we only miss orders for 2 days in a week.
 
 
-<img src="Scenario 2.png" width="700" height="600">
+<img src="Scenario 2.png" width="800" height="600">
+Similar results but one thing to note here is that the range of values for losses have reduced significantly. We can see a marginal increase in the range of missed opportunity values. 
 
 
-<img src="Comparison.png" width="700" height="600">
+<img src="Comparison.png" width="800" height="600">
+It can be seen that significant drop for losses occurred in scenario 2 for both the items. The reason behind this is that we have significantly cut down the wastage due to expiry. As we are restocking on the basis of previous week’s demand, there is a very low possibility of items being overstocked. However, this logic has a negative effect on orders that are missed. We can see that more orders were missed for the scenario 2 because of limited stock. As demand is a randomized variable, it is obvious that we will not have an exact estimate. Some weeks will have more demand than the previous week. One thing to note here is that, though losses have decreased drastically, not much increase can been seen in terms of missed orders.
+
+<img src="Total Loss.png" width="400" height="600">
+When we look at total losses for both items over a month, we note that losses occurred in scenario 2 has been reduced to more than 50%. This is a good result but there could be a further scope of improvement if both the restocking interval and the restocking quantity is dynamic. The simulation we have done here only has the restocking quantity dynamic but the restocking interval is fixed to be a week.
+
