@@ -10,7 +10,8 @@ We have successfully created experiments for two different scenarios. In the fir
 For the second scenario, we restock based on previous week’s demand. Checking for expired items is still performed on a daily basis. Restocking and checking for any defectives is also done weekly as per previous scenario.
 
 ## Hypothesis:
-We hypothesize that restocking on the basis of demand will optimize our cost and minimize wastage.
+Hypothesis 1: Restocking on the basis of demand will optimize our cost (Reduce loss).
+Hypothesis 2: Loss increases as we miss more orders.
 
 ## Flowchart:
 
@@ -24,31 +25,30 @@ We repeat the same process every week and, in the end, display the summary stati
 
 ## Assumptions:
 We have designed the model based on the following assumptions:
-i.	We are performing the experiment for 28 days i.e. 4 weeks.
-ii.	Considering 2 items: A and B. A has a very low-shelf-life i.e. 3 days whereas B has a relatively higher 5 day shelf life.
-iii.	Storage capacity for each product is 100 and it is fixed.
-iv.	Cost per product A is 15$ and that per product B is 10$
-v.	Profit per product A is 5$ and that per product B is 3$
-vi.	If expiry of an item is more than a week i.e. 7 days, then there won’t be any missed opportunities.
 
-
-## Data Structure:
-We are using DataFrame as our primary data structure for the Inventory. As it can be seen in the first picture, dataframe has 2 columns for 2 items. Each row of the dataframe represents each item and its corresponding expiry. The total number of rows at any given point represents the number of items in stock.
-The screenshot to the right, is an instance of restocking at the end of the week. We can clearly see that the product A which had an expiry of 10 days will only have 3 days left at the end of the week. The new stock of product A will have an expiry of 10 days. It can be seen in the red highlighted rows. In this case, we had to restock 15 items.
+i.	We are performing the experiment for 28 days i.e. 4 weeks.\
+ii.	Considering 2 items: A and B. A has a very low-shelf-life i.e. 3 days whereas B has a relatively higher 5 day shelf life.\
+iii.	Storage capacity for each product is 100 and it is fixed.\
+iv.	Cost per product A is 15$ and that per product B is 10$\
+v.	Profit per product A is 5$ and that per product B is 3$\
+vi.	If expiry of an item is more than a week i.e. 7 days, then there won’t be any missed opportunities since new stock gets added at the end of each week.
 
 ## Variables of uncertainty:
 i.	Demand: It uses PERT distribution to calculate demand for each day for each item.
 As it can be seen, the stock_demand is a dictionary of lists of with item A and item B as its keys. For 28 days, we can see 28 random values of demand that are generated.
-ii.	Defective Items: We generate a random number between 5 to 10. This number represents the percentage of defective items from the total items which are to be restocked.
 
+ii.	Defective Items: We generate a random number between 5 and 10. This number represents the percentage of defective items from the total items which are to be restocked.
+
+
+## Results:
 We evaluate the scenarios on the basis of 2 things:
-i.	Loss 
+
+i.	Loss\
 ii.	Missed Profit
 
 Loss is calculated as the cost of expired items + cost of defective items.
-The missed opportunity is calculated as the profit that could have been made for missed orders. Orders are missed if there is not enough stock.
 
-## Results:
+The missed opportunity is calculated as the profit that could have been made for missed orders. Orders are missed if there is not enough stock.
 
 <img src="Scenario 1.png" width="1000" height="600">
 It can be seen that for this scenario, losses incurred for item B are lower than that for the item A. The reason behind this is that item B has a longer shelf life when compared to item A. Thus, there is less possibility of wastage due to expiry in case of B. The missed opportunities for item A are greater than that of item B because of the same reason that A would expire sooner. As a result, for the item A we miss orders for 4 days whereas for the item B we only miss orders for 2 days in a week.
@@ -64,3 +64,4 @@ It can be seen that significant drop for losses occurred in scenario 2 for both 
 <img src="Total Loss.png" width="400" height="500">
 When we look at total losses for both items over a month, we note that losses occurred in scenario 2 has been reduced to more than 50%. This is a good result but there could be a further scope of improvement if both the restocking interval and the restocking quantity is dynamic. The simulation we have done here only has the restocking quantity dynamic but the restocking interval is fixed to be a week.
 
+##Thus, we accept Hypothesis 1 and reject Hypothesis 2.
