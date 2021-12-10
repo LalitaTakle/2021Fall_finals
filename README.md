@@ -10,7 +10,7 @@ We have successfully created experiments for two different scenarios. In the fir
 For the second scenario, we restock based on previous week’s demand. Checking for expired items is still performed on a daily basis. Restocking and checking for any defectives is also done weekly as per previous scenario.
 
 ## Hypothesis:
-Hypothesis 1: Restocking on the basis of demand will optimize our cost (Reduce loss).
+Hypothesis 1: Restocking on the basis of demand will optimize our cost (Reduce loss).\
 Hypothesis 2: Loss increases as we miss more orders.
 
 ## Flowchart:
@@ -64,4 +64,4 @@ It can be seen that significant drop for losses occurred in scenario 2 for both 
 <img src="Total Loss.png" width="400" height="500">
 When we look at total losses for both items over a month, we note that losses occurred in scenario 2 has been reduced to more than 50%. This is a good result but there could be a further scope of improvement if both the restocking interval and the restocking quantity is dynamic. The simulation we have done here only has the restocking quantity dynamic but the restocking interval is fixed to be a week.
 
-##Thus, we accept Hypothesis 1 and reject Hypothesis 2.
+## Thus, we accept Hypothesis 1 and reject Hypothesis 2.
