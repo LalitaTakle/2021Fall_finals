@@ -11,7 +11,9 @@ We have successfully created experiments for 3 different scenarios.
 <img src="scenario_table.png" width="500" height="100">
 
 ## Hypothesis:
-Restocking on the basis of demand will optimize our cost.
+Hypothesis 1: Restocking weekly on the basis of pervious cumulative demand will reduce losses
+
+Hypothesis 2: Restocking dynamically i.e., as soon as the stock finishes on the basis of previous cumulative demand will maximize Profits
 
 ## Flowchart:
 
@@ -83,5 +85,8 @@ For missed profits, scenario 3 performs best in case of item A as very less orde
 
 When we look at average profits for both items over a month, we note that profit gained in scenario 3 is far better than previous scenarios. This is because, number of items sold is maximum in case of scenario 3 as we rarely miss any orders due to dynamic restocking. At the same time, wastage due to expiry is also minimal due to restocking on the basis of cumulative previous demands. In conclusion, we can say that scenario 3 is the ideal case for optimizing costs.
 
-## Thus, we accept our hypothesis.
+## Thus, we accept both the hypotheses.
+
+
+Note: The program iterates for 28 days in each simulation. i.e. for 100 simulations, we have 2800 iterations.
 
