@@ -347,14 +347,14 @@ def mc_simulation():
                     sold_profit_simulation_dict[how_to_restock][k].append(sum(u1[2][k]))
 
                     if len(loss_simulation_dict[how_to_restock][k]) == 0:
-                        loss_simulation_dict[how_to_restock][k].append(sum(u1[0][k]))
-                        missed_profit_simulation_dict[how_to_restock][k].append(sum(u1[1][k]))
+                        loss_simulation_dict[how_to_restock][k].append(sum(u1[0][k]))           # loss value for first simulation
+                        missed_profit_simulation_dict[how_to_restock][k].append(sum(u1[1][k]))      # missed profit value for first simulation
                     else:
                         loss_cum_avg = cumulative_avg(loss_simulation_dict[how_to_restock][k], sum(u1[0][k]))
-                        loss_simulation_dict[how_to_restock][k].append(loss_cum_avg)
+                        loss_simulation_dict[how_to_restock][k].append(loss_cum_avg)        # stores loss statistics for each simulation
 
                         missed_cum_avg = cumulative_avg(missed_profit_simulation_dict[how_to_restock][k], sum(u1[1][k]))
-                        missed_profit_simulation_dict[how_to_restock][k].append(missed_cum_avg)
+                        missed_profit_simulation_dict[how_to_restock][k].append(missed_cum_avg)        # stores missed profit statistics for each simulation
 
             # plot aggregate statistics for after all simulations
             for k in loss_simulation_dict[how_to_restock]:
@@ -410,7 +410,7 @@ def mc_simulation():
                 plt.figure(3, figsize=(8, 5))
                 plt.title('Average Monthly Profit (Including all items)')
                 plt.ylabel('Profit (in $)')
-                s1_avg = mean(sold_profit_simulation_dict[1]['A']) + mean(sold_profit_simulation_dict[1]['B'])
+                s1_avg = mean(sold_profit_simulation_dict[1]['A']) + mean(sold_profit_simulation_dict[1]['B'])      # average profits for all simulations
                 s2_avg = mean(sold_profit_simulation_dict[2]['A']) + mean(sold_profit_simulation_dict[2]['B'])
                 s3_avg = mean(sold_profit_simulation_dict[3]['A']) + mean(sold_profit_simulation_dict[3]['B'])
                 plt.bar(['Scenario 1', 'Scenario 2', 'Scenario 3'], [s1_avg, s2_avg, s3_avg])
