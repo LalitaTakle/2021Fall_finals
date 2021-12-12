@@ -84,7 +84,7 @@ def demand_items(storage):
 
 def defective(items):
     """
-    Generates a random integer which represents the number of defective items form the total restocked items.
+    Generates a random integer which represents the number of defective items from the total restocked items.
 
     :param items: total number of items to be restocked, out of which we check the defective items
     :return: an integer number of defective items
@@ -135,7 +135,7 @@ def item_df(df):
 
 def financials(sold, missed, weekly_wastage, key):
     """
-    Calculates total loss and total missed profit for each item
+    Calculates total loss, total missed profit and total profit for each item
 
     :param sold: Number of sold items
     :param missed: Number of missed orders due to no stock
