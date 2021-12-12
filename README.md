@@ -75,7 +75,7 @@ We can get a better look at these comparisons in the following graph.
 
 It can be seen that losses have been cut down to almost 50% in scenario 2 and 3 for both the items when compared to scenario 1. The reason behind this is that we have significantly cut down the wastage due to expiry. As we are restocking on the basis of previous week’s demand, there is a very low possibility of items being overstocked. 
 
-When comparing losses for scenario 2 and 3 with each other, scenario 2 performs better in case of item A as wastage due to expiry will occur for 2 cycles in a week for\
+When comparing losses for scenario 2 and 3 with each other, scenario 2 performs better in case of item A as wastage due to expiry will occur for 2 cycles in a week for
 scenario 3. No significant difference can be seen for item B.
 
 For missed profits, scenario 3 performs best in case of item A as very less orders are missed because restocking is done twice in a week. For item B, scenario 1 still performs the best, however, scenario 3 is a better performer than scenario 2.
