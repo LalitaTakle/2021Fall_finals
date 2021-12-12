@@ -88,3 +88,8 @@ When we look at average profits for both items over a month, we note that profit
 
 Note: The program iterates for 28 days in each simulation. i.e. for 100 simulations, we have 2800 iterations.
 
+## References:
+1. http://www.ijcim.th.org/past_editions/2019V27N2/27n2Page76.pdf
+2. https://link.springer.com/article/10.1007/s11740-020-00986-5
+3. https://www.researchgate.net/publication/287301028_Perishable_Inventory_Challenges
+4. https://www.researchgate.net/publication/303848241_A_simple_heuristic_for_perishable_item_inventory_control_under_non-stationary_stochastic_demand
