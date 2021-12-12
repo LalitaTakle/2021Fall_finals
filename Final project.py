@@ -148,7 +148,7 @@ def financials(sold, missed, weekly_wastage, key):
     >>> financials(3,8,4,'B')
     [60, 24, 9]
     """
-    # Initilized cost and profit for both items
+    # Initialized cost and profit for both items
     cost_a = 20
     cost_b = 15
     profit_a = 4
@@ -252,7 +252,7 @@ def update_inventory(a, expiry, storage, scenario):
 
             if (day == 7 and scenario != 3) or (df.empty is True and scenario == 3):       # Check if end of week for scenario 1 and 2 or if no stock in inventory for scenario 3
                 previous_demand_list.append(item_demand_before_expiry)
-                items_to_restock = restocking(scenario, storage, df, mean(previous_demand_list))            # Call restocking fucntion
+                items_to_restock = restocking(scenario, storage, df, mean(previous_demand_list))            # Call restocking function
 
                 df2 = pd.DataFrame(list([expiry[k]] * items_to_restock), columns=list(k))             # Add rows for restocked items
                 df = df.append(df2, ignore_index=True)
@@ -305,12 +305,35 @@ def mc_simulation():
     loss_simulation_dict = {1: {'A': [], 'B': []}, 2: {'A': [], 'B': []}, 3: {'A': [], 'B': []}}
     missed_profit_simulation_dict = {1: {'A': [], 'B': []}, 2: {'A': [], 'B': []}, 3: {'A': [], 'B': []}}
     sold_profit_simulation_dict = {1: {'A': [], 'B': []}, 2: {'A': [], 'B': []}, 3: {'A': [], 'B': []}}
+    simulations = None
+    how_to_restock = None
 
-    simulations = int(input('Enter number of simulations\n'))           # takes number of simulations as user input
+    while True:
+        try:
+            simulations = int(input('Enter number of simulations\n'))           # takes number of simulations as user input
+            if simulations < 2:                                                 # We need at least 2 values for a line plot
+                print('Enter a number greater than 1\n')
+                continue
+        except ValueError:
+            print('Enter a valid simulation\n')
+            continue
+        else:
+            break
+
     flag = 0
     while True:
-        how_to_restock = int(input(
-            "1. Press '1' to restock weekly to full capacity\n2. Press '2' to restock weekly based on demand\n3. Press '3' to restock dynamically based on demand\n4. Press '4' for comparison\n5. Press '5' to exit\n"))
+
+        while True:
+            try:
+                how_to_restock = int(input("1. Press '1' to restock weekly to full capacity\n2. Press '2' to restock weekly based on demand\n3. Press '3' to restock dynamically based on demand\n4. Press '4' for comparison\n5. Press '5' to exit\n"))
+                if how_to_restock not in [1, 2, 3, 4, 5]:           # Available options
+                    raise ValueError
+            except ValueError:
+                print('Enter a valid choice\n')
+                continue
+            else:
+                break
+
         if how_to_restock == 5:
             break
 
