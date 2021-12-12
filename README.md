@@ -12,7 +12,6 @@ Restocking on the basis of demand will optimize our cost.
 
 ## Flowchart:
 
-<img src="Flowchart.png" width="600" height="420">
 
 ## Assumptions:
 We have designed the model based on the following assumptions:
