@@ -26,7 +26,7 @@ i.	In each simulation, we are performing the experiment for 28 days i.e. a month
 ii.	Considering 2 items: A and B. A has a very low-shelf-life i.e. 3 days whereas B has a relatively higher 5 day shelf life.\
 iii. Storage capacity for each product is 100 and it is fixed.\
 iv.	Cost per product A is 20$ and that per product B is 15$\
-v.	Profit per product A is 4$ and that per product B is 3$
+v.	Profit per product A is 4$ and that per product B is 3$\
 vi. We check for defective items while restocking.
 
 Note: If expiry of an item is more than 7 days, then there won’t be any missed profits since new stock gets added at the end of each week.
