@@ -7,6 +7,9 @@ Our main objective is to investigate the effect of adopting an optimum inventory
 
 ## Scenarios:
 We have successfully created experiments for 3 different scenarios.
+
+<img src="scenario_table.png" width="400" height="200">
+
 ## Hypothesis:
 Restocking on the basis of demand will optimize our cost.
 
@@ -44,14 +47,19 @@ The missed profit is calculated as (profit * orders missed). Orders are missed i
 
 Average profit is calculated as (profit * items sold).
 
-<img src="Scenario 1.png" width="1000" height="600">
+<img src="scenario_1.png" width="1000" height="600">
+
 It can be seen that for this scenario, losses incurred for item B are lower than that for the item A. The reason behind this is that item B has a longer shelf life when compared to item A. Thus, there is less possibility of wastage due to expiry in case of B.
 
 The missed profit for item A is greater than that of item B because of the same reason that A would expire sooner. As a result, for the item A we miss orders for 4 days whereas for the item B we only miss orders for 2 days in a week.
 
 
-<img src="Scenario 2.png" width="1000" height="600">
+<img src="scenario_2.png" width="1000" height="600">
+
 When compared to scenario 1, here we see that the range of values for losses have reduced significantly. However, we can see an increase in the range of missed profits. 
+
+
+<img src="scenario_3.png" width="1000" height="600">
 
 The losses incurred in this scenario is significantly less than scenario 1 but slightly higher than scenario 2.
 
@@ -62,7 +70,8 @@ scenario 1.
 
 We can get a better look at these comparisons in the following graph.
 
-<img src="Comparison.png" width="1000" height="600">
+<img src="scenario_comparison.png" width="1000" height="600">
+
 It can be seen that losses have been cut down to almost 50% in scenario 2 and 3 for both the items when compared to scenario 1. The reason behind this is that we have significantly cut down the wastage due to expiry. As we are restocking on the basis of previous week’s demand, there is a very low possibility of items being overstocked. 
 
 When comparing losses for scenario 2 and 3 with each other, scenario 2 performs better in case of item A as wastage due to expiry will occur for 2 cycles in a week for\
@@ -70,7 +79,7 @@ scenario 3. No significant difference can be seen for item B.
 
 For missed profits, scenario 3 performs best in case of item A as very less orders are missed because restocking is done twice in a week. For item B, scenario 1 still performs the best, however, scenario 3 is a better performer than scenario 2.
 
-<img src="Total Loss.png" width="400" height="500">
+<img src="scenario_profit.png" width="400" height="500">
 
 When we look at average profits for both items over a month, we note that profit gained in scenario 3 is far better than previous scenarios. This is because, number of items sold is maximum in case of scenario 3 as we rarely miss any orders due to dynamic restocking. At the same time, wastage due to expiry is also minimal due to restocking on the basis of cumulative previous demands. In conclusion, we can say that scenario 3 is the ideal case for optimizing costs.
 
