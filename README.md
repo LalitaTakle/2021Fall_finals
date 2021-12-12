@@ -31,7 +31,6 @@ v.	Profit per product A is 4$ and that per product B is 3$
 Note: If expiry of an item is more than 7 days, then there won’t be any missed profits since new stock gets added at the end of each week.
 ## Variables of uncertainty:
 i.	Demand: It uses PERT distribution to calculate demand for each day for each item.
-As it can be seen, the stock_demand is a dictionary of lists of with item A and item B as its keys. For 28 days, we can see 28 random values of demand that are generated.
 
 ii.	Defective Items: We generate a random number between 5 and 10. This number represents the percentage of defective items from the total items which are to be restocked.
 
