@@ -8,7 +8,7 @@ Our main objective is to investigate the effect of adopting an optimum inventory
 ## Scenarios:
 We have successfully created experiments for 3 different scenarios.
 
-<img src="scenario_table.png" width="400" height="200">
+<img src="scenario_table.png" width="600" height="200">
 
 ## Hypothesis:
 Restocking on the basis of demand will optimize our cost.
