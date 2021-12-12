@@ -10,10 +10,12 @@ We have successfully created experiments for 3 different scenarios.
 
 <img src="scenario_table.png" width="500" height="100">
 
+Here, 'Full' denotes restocking to maximum inventory capacity and 'Cumulative Previous Demand' denotes restocking quantity on the basis of cumulative demand of previous weeks.
+
 ## Hypothesis:
 Hypothesis 1: Restocking weekly on the basis of pervious cumulative demand will reduce losses
 
-Hypothesis 2: Restocking dynamically i.e., as soon as the stock finishes on the basis of previous cumulative demand will maximize Profits
+Hypothesis 2: Restocking dynamically i.e. as soon as the item expires, on the basis of previous cumulative demand will maximize Profits
 
 ## Flowchart:
 
