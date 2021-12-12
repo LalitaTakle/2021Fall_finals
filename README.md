@@ -63,12 +63,11 @@ When compared to scenario 1, here we see that the range of values for losses hav
 
 <img src="scenario_3.png" width="1000" height="600">
 
-The losses incurred in this scenario is significantly less than scenario 1 but slightly higher than scenario 2.
+The losses incurred in this scenario is significantly less than scenario 1 but higher than scenario 2.
 
 Missed profits for item A is least in scenario 1. The reason behind this is that, in previous scenarios orders were missed for 4 days in a week as expiry of item A was 3 days. However, in this scenario, it gets restocked twice in a week. Hence, there is very minimal possibility of orders getting missed.
 
-For item B, missed profits in scenario 3 is less than scenario 2 but greater than\
-scenario 1.
+For item B, missed profits in scenario 3 is less than scenario 2 but greater than scenario 1.
 
 We can get a better look at these comparisons in the following graph.
 
