@@ -31,7 +31,7 @@ iv.	Cost per product A is 20$ and that per product B is 15$\
 v.	Profit per product A is 4$ and that per product B is 3$\
 vi. We check for defective items while restocking.
 
-Note: If expiry of an item is more than 7 days, then there won’t be any missed profits since new stock gets added at the end of each week.
+Note: If expiry of an item is more than 7 days, then there won’t be any missed profits since new stock gets added at the end of each week for Scenario 1 and 2.
 ## Variables of uncertainty:
 i.	Demand: It uses PERT distribution to calculate demand for each day for each item.
 
