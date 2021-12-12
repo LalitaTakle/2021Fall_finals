@@ -79,7 +79,7 @@ scenario 3. No significant difference can be seen for item B.
 
 For missed profits, scenario 3 performs best in case of item A as very less orders are missed because restocking is done twice in a week. For item B, scenario 1 still performs the best, however, scenario 3 is a better performer than scenario 2.
 
-<img src="scenario_profit.png" width="500" height="600">
+<img src="scenario_profit.png" width="500" height="500">
 
 When we look at average profits for both items over a month, we note that profit gained in scenario 3 is far better than previous scenarios. This is because, number of items sold is maximum in case of scenario 3 as we rarely miss any orders due to dynamic restocking. At the same time, wastage due to expiry is also minimal due to restocking on the basis of cumulative previous demands. In conclusion, we can say that scenario 3 is the ideal case for optimizing costs.
 
